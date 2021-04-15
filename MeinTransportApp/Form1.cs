@@ -36,13 +36,13 @@ namespace MeinTransportApp
             try
             {
 
-                Connections connections = transport.GetConnections(startstation, endstation);
+                Connections connections = transport.GetConnections(startstation, endstation, dtpDate.Value.ToString("yyyy-MM-dd"), dtpTime.Value.ToString("hh:mm"));
 
 
                 for (int i = 0; i <= connections.ConnectionList.Count - 1; i++)
                 {
 
-                    string time = connections.ConnectionList[i].From.Departure.Value.ToShortTimeString();
+                    string time = connections.ConnectionList[i].From.Departure.Value.ToString("yyyy:MM:dd     HH:mm");
                     string start = connections.ConnectionList[i].From.Station.Name;
                     string end = connections.ConnectionList[i].To.Station.Name;
                     string platform = connections.ConnectionList[i].From.Platform;
@@ -169,21 +169,22 @@ namespace MeinTransportApp
 
         private void changetafel(object sender, EventArgs e)
         {
-            
-            
-                cbxTafel.Items.Clear();
+
+
+
+
+            if (tbxStation.Text != lbxPredictionTafel.Text)
+            {
+                lbxPredictionTafel.Items.Clear();
 
                 try
                 {
-                    cbxTafel.DroppedDown = true;
-                    cbxTafel.Select(cbxTafel.Text.Length, 0);
-                    string selection = cbxTafel.Text;
+                    string selection = tbxStation.Text;
                     List<Station> stations = transport.GetStations(selection + "*").StationList;
                     foreach (Station station in stations)
 
                     {
-                        cbxTafel.Items.Add(station.Name);
-                    cbxTafel.Text = selection;
+                        lbxPredictionTafel.Items.Add(station.Name);
                     }
                 }
                 catch
@@ -191,14 +192,14 @@ namespace MeinTransportApp
 
                 }
 
-            
+            }
+
 
         }
 
-        private void SelectTafel(object sender, EventArgs e)
-        {
-            cbxTafel.DroppedDown = true;
-        }
+
+
+
     }
     
 }

@@ -40,24 +40,23 @@ namespace MeinTransportApp
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnAbfahrtstafel = new System.Windows.Forms.RadioButton();
-            this.rbtnSearch = new System.Windows.Forms.RadioButton();
             this.lbxPredictionStart = new System.Windows.Forms.ListBox();
             this.lbxPredictionEnd = new System.Windows.Forms.ListBox();
             this.gbxSearch = new System.Windows.Forms.GroupBox();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.dgvAbfahrtstafel = new System.Windows.Forms.DataGridView();
             this.Zeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Station = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Platfrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxAbfahrtstafel = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.lbxPredictionTafel = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxStation = new System.Windows.Forms.TextBox();
             this.btnTafel = new System.Windows.Forms.Button();
-            this.cbxTafel = new System.Windows.Forms.ComboBox();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConnections)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.gbxSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbfahrtstafel)).BeginInit();
             this.gbxAbfahrtstafel.SuspendLayout();
@@ -66,47 +65,47 @@ namespace MeinTransportApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(454, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Start:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 153);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(30, 49);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.Size = new System.Drawing.Size(56, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "End:";
             // 
             // tbxStart
             // 
-            this.tbxStart.Location = new System.Drawing.Point(77, 25);
-            this.tbxStart.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxStart.Location = new System.Drawing.Point(596, 44);
+            this.tbxStart.Margin = new System.Windows.Forms.Padding(4);
             this.tbxStart.Name = "tbxStart";
-            this.tbxStart.Size = new System.Drawing.Size(122, 20);
+            this.tbxStart.Size = new System.Drawing.Size(240, 31);
             this.tbxStart.TabIndex = 2;
             this.tbxStart.TextChanged += new System.EventHandler(this.predictionstart);
             // 
             // tbxEnd
             // 
-            this.tbxEnd.Location = new System.Drawing.Point(77, 150);
-            this.tbxEnd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxEnd.Location = new System.Drawing.Point(172, 43);
+            this.tbxEnd.Margin = new System.Windows.Forms.Padding(4);
             this.tbxEnd.Name = "tbxEnd";
-            this.tbxEnd.Size = new System.Drawing.Size(122, 20);
+            this.tbxEnd.Size = new System.Drawing.Size(240, 31);
             this.tbxEnd.TabIndex = 3;
             this.tbxEnd.TextChanged += new System.EventHandler(this.predictionend);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(1, 330);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Location = new System.Drawing.Point(894, 57);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(1018, 40);
+            this.btnSearch.Size = new System.Drawing.Size(114, 70);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -121,18 +120,19 @@ namespace MeinTransportApp
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dgvConnections.Location = new System.Drawing.Point(1, 374);
-            this.dgvConnections.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvConnections.Location = new System.Drawing.Point(26, 461);
+            this.dgvConnections.Margin = new System.Windows.Forms.Padding(4);
             this.dgvConnections.Name = "dgvConnections";
+            this.dgvConnections.RowHeadersVisible = false;
             this.dgvConnections.RowHeadersWidth = 82;
             this.dgvConnections.RowTemplate.Height = 33;
-            this.dgvConnections.Size = new System.Drawing.Size(1018, 241);
+            this.dgvConnections.Size = new System.Drawing.Size(1008, 463);
             this.dgvConnections.TabIndex = 5;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Time";
-            this.Column1.MinimumWidth = 10;
+            this.Column1.MinimumWidth = 100;
             this.Column1.Name = "Column1";
             this.Column1.Width = 200;
             // 
@@ -160,75 +160,59 @@ namespace MeinTransportApp
             // Column5
             // 
             this.Column5.HeaderText = "ArrivalTime";
+            this.Column5.MinimumWidth = 10;
             this.Column5.Name = "Column5";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbtnAbfahrtstafel);
-            this.groupBox1.Controls.Add(this.rbtnSearch);
-            this.groupBox1.Location = new System.Drawing.Point(238, 24);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(149, 65);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Function";
-            // 
-            // rbtnAbfahrtstafel
-            // 
-            this.rbtnAbfahrtstafel.AutoSize = true;
-            this.rbtnAbfahrtstafel.Location = new System.Drawing.Point(22, 44);
-            this.rbtnAbfahrtstafel.Name = "rbtnAbfahrtstafel";
-            this.rbtnAbfahrtstafel.Size = new System.Drawing.Size(84, 17);
-            this.rbtnAbfahrtstafel.TabIndex = 1;
-            this.rbtnAbfahrtstafel.TabStop = true;
-            this.rbtnAbfahrtstafel.Text = "Abfahrtstafel";
-            this.rbtnAbfahrtstafel.UseVisualStyleBackColor = true;
-            this.rbtnAbfahrtstafel.Click += new System.EventHandler(this.ShowAbfahrtstafel);
-            // 
-            // rbtnSearch
-            // 
-            this.rbtnSearch.AutoSize = true;
-            this.rbtnSearch.Location = new System.Drawing.Point(22, 21);
-            this.rbtnSearch.Name = "rbtnSearch";
-            this.rbtnSearch.Size = new System.Drawing.Size(116, 17);
-            this.rbtnSearch.TabIndex = 0;
-            this.rbtnSearch.TabStop = true;
-            this.rbtnSearch.Text = "Search Connection";
-            this.rbtnSearch.UseVisualStyleBackColor = true;
-            this.rbtnSearch.Click += new System.EventHandler(this.ShowSearch);
+            this.Column5.Width = 200;
             // 
             // lbxPredictionStart
             // 
             this.lbxPredictionStart.FormattingEnabled = true;
-            this.lbxPredictionStart.Location = new System.Drawing.Point(77, 46);
+            this.lbxPredictionStart.ItemHeight = 25;
+            this.lbxPredictionStart.Location = new System.Drawing.Point(596, 84);
+            this.lbxPredictionStart.Margin = new System.Windows.Forms.Padding(6);
             this.lbxPredictionStart.Name = "lbxPredictionStart";
-            this.lbxPredictionStart.Size = new System.Drawing.Size(122, 95);
+            this.lbxPredictionStart.Size = new System.Drawing.Size(240, 179);
             this.lbxPredictionStart.TabIndex = 8;
             this.lbxPredictionStart.DoubleClick += new System.EventHandler(this.selectPredictionStart);
             // 
             // lbxPredictionEnd
             // 
             this.lbxPredictionEnd.FormattingEnabled = true;
-            this.lbxPredictionEnd.Location = new System.Drawing.Point(77, 172);
+            this.lbxPredictionEnd.ItemHeight = 25;
+            this.lbxPredictionEnd.Location = new System.Drawing.Point(171, 84);
+            this.lbxPredictionEnd.Margin = new System.Windows.Forms.Padding(6);
             this.lbxPredictionEnd.Name = "lbxPredictionEnd";
-            this.lbxPredictionEnd.Size = new System.Drawing.Size(122, 95);
+            this.lbxPredictionEnd.Size = new System.Drawing.Size(240, 179);
             this.lbxPredictionEnd.TabIndex = 9;
             this.lbxPredictionEnd.DoubleClick += new System.EventHandler(this.selectPredictionEnd);
             // 
             // gbxSearch
             // 
+            this.gbxSearch.Controls.Add(this.label5);
+            this.gbxSearch.Controls.Add(this.label4);
+            this.gbxSearch.Controls.Add(this.dtpTime);
+            this.gbxSearch.Controls.Add(this.dtpDate);
             this.gbxSearch.Controls.Add(this.lbxPredictionEnd);
             this.gbxSearch.Controls.Add(this.lbxPredictionStart);
             this.gbxSearch.Controls.Add(this.tbxEnd);
             this.gbxSearch.Controls.Add(this.tbxStart);
             this.gbxSearch.Controls.Add(this.label2);
             this.gbxSearch.Controls.Add(this.label1);
-            this.gbxSearch.Location = new System.Drawing.Point(13, 12);
+            this.gbxSearch.Location = new System.Drawing.Point(26, 23);
+            this.gbxSearch.Margin = new System.Windows.Forms.Padding(6);
             this.gbxSearch.Name = "gbxSearch";
-            this.gbxSearch.Size = new System.Drawing.Size(220, 299);
+            this.gbxSearch.Padding = new System.Windows.Forms.Padding(6);
+            this.gbxSearch.Size = new System.Drawing.Size(1008, 406);
             this.gbxSearch.TabIndex = 10;
             this.gbxSearch.TabStop = false;
             this.gbxSearch.Text = "Search";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Location = new System.Drawing.Point(171, 300);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(241, 31);
+            this.dtpDate.TabIndex = 18;
             // 
             // dgvAbfahrtstafel
             // 
@@ -237,102 +221,134 @@ namespace MeinTransportApp
             this.Zeit,
             this.Station,
             this.Platfrom});
-            this.dgvAbfahrtstafel.Location = new System.Drawing.Point(679, 70);
+            this.dgvAbfahrtstafel.Location = new System.Drawing.Point(1224, 461);
+            this.dgvAbfahrtstafel.Margin = new System.Windows.Forms.Padding(6);
             this.dgvAbfahrtstafel.Name = "dgvAbfahrtstafel";
-            this.dgvAbfahrtstafel.Size = new System.Drawing.Size(350, 241);
+            this.dgvAbfahrtstafel.RowHeadersVisible = false;
+            this.dgvAbfahrtstafel.RowHeadersWidth = 82;
+            this.dgvAbfahrtstafel.Size = new System.Drawing.Size(1008, 463);
             this.dgvAbfahrtstafel.TabIndex = 16;
             // 
             // Zeit
             // 
             this.Zeit.HeaderText = "Zeit";
+            this.Zeit.MinimumWidth = 10;
             this.Zeit.Name = "Zeit";
+            this.Zeit.Width = 200;
             // 
             // Station
             // 
             this.Station.HeaderText = "Name";
+            this.Station.MinimumWidth = 10;
             this.Station.Name = "Station";
+            this.Station.Width = 200;
             // 
             // Platfrom
             // 
             this.Platfrom.HeaderText = "Platform";
+            this.Platfrom.MinimumWidth = 10;
             this.Platfrom.Name = "Platfrom";
+            this.Platfrom.Width = 200;
             // 
             // gbxAbfahrtstafel
             // 
-            this.gbxAbfahrtstafel.Controls.Add(this.cbxTafel);
-            this.gbxAbfahrtstafel.Controls.Add(this.listBox3);
+            this.gbxAbfahrtstafel.Controls.Add(this.btnTafel);
+            this.gbxAbfahrtstafel.Controls.Add(this.lbxPredictionTafel);
             this.gbxAbfahrtstafel.Controls.Add(this.label3);
             this.gbxAbfahrtstafel.Controls.Add(this.tbxStation);
-            this.gbxAbfahrtstafel.Location = new System.Drawing.Point(453, 17);
+            this.gbxAbfahrtstafel.Location = new System.Drawing.Point(1224, 33);
+            this.gbxAbfahrtstafel.Margin = new System.Windows.Forms.Padding(6);
             this.gbxAbfahrtstafel.Name = "gbxAbfahrtstafel";
-            this.gbxAbfahrtstafel.Size = new System.Drawing.Size(220, 294);
+            this.gbxAbfahrtstafel.Padding = new System.Windows.Forms.Padding(6);
+            this.gbxAbfahrtstafel.Size = new System.Drawing.Size(1008, 396);
             this.gbxAbfahrtstafel.TabIndex = 15;
             this.gbxAbfahrtstafel.TabStop = false;
             this.gbxAbfahrtstafel.Text = "Abfahrtstafel";
             // 
-            // listBox3
+            // lbxPredictionTafel
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(96, 82);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(109, 212);
-            this.listBox3.TabIndex = 2;
+            this.lbxPredictionTafel.FormattingEnabled = true;
+            this.lbxPredictionTafel.ItemHeight = 25;
+            this.lbxPredictionTafel.Location = new System.Drawing.Point(172, 74);
+            this.lbxPredictionTafel.Margin = new System.Windows.Forms.Padding(6);
+            this.lbxPredictionTafel.Name = "lbxPredictionTafel";
+            this.lbxPredictionTafel.Size = new System.Drawing.Size(214, 179);
+            this.lbxPredictionTafel.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 22);
+            this.label3.Location = new System.Drawing.Point(28, 42);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(79, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Station";
             // 
             // tbxStation
             // 
-            this.tbxStation.Location = new System.Drawing.Point(96, 53);
+            this.tbxStation.Location = new System.Drawing.Point(172, 31);
+            this.tbxStation.Margin = new System.Windows.Forms.Padding(6);
             this.tbxStation.Name = "tbxStation";
-            this.tbxStation.Size = new System.Drawing.Size(109, 20);
+            this.tbxStation.Size = new System.Drawing.Size(214, 31);
             this.tbxStation.TabIndex = 0;
+            this.tbxStation.TextChanged += new System.EventHandler(this.changetafel);
             // 
             // btnTafel
             // 
-            this.btnTafel.Location = new System.Drawing.Point(679, 24);
+            this.btnTafel.Location = new System.Drawing.Point(438, 40);
+            this.btnTafel.Margin = new System.Windows.Forms.Padding(6);
             this.btnTafel.Name = "btnTafel";
-            this.btnTafel.Size = new System.Drawing.Size(350, 40);
+            this.btnTafel.Size = new System.Drawing.Size(416, 77);
             this.btnTafel.TabIndex = 17;
             this.btnTafel.Text = "Tafel";
             this.btnTafel.UseVisualStyleBackColor = true;
             this.btnTafel.Click += new System.EventHandler(this.ClickTafel);
             // 
-            // cbxTafel
+            // dtpTime
             // 
-            this.cbxTafel.FormattingEnabled = true;
-            this.cbxTafel.Location = new System.Drawing.Point(96, 20);
-            this.cbxTafel.Name = "cbxTafel";
-            this.cbxTafel.Size = new System.Drawing.Size(108, 21);
-            this.cbxTafel.TabIndex = 3;
-            this.cbxTafel.TextChanged += new System.EventHandler(this.changetafel);
-            this.cbxTafel.Click += new System.EventHandler(this.SelectTafel);
+            this.dtpTime.CustomFormat = "HH:mm";
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTime.Location = new System.Drawing.Point(596, 300);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.ShowUpDown = true;
+            this.dtpTime.Size = new System.Drawing.Size(240, 31);
+            this.dtpTime.TabIndex = 19;
+            this.dtpTime.Value = new System.DateTime(2021, 4, 15, 20, 58, 0, 0);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 305);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 25);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(454, 300);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 25);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "label5";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 629);
-            this.Controls.Add(this.btnTafel);
+            this.ClientSize = new System.Drawing.Size(3462, 1916);
             this.Controls.Add(this.dgvAbfahrtstafel);
             this.Controls.Add(this.gbxAbfahrtstafel);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.gbxSearch);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvConnections);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConnections)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.gbxSearch.ResumeLayout(false);
             this.gbxSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbfahrtstafel)).EndInit();
@@ -350,14 +366,6 @@ namespace MeinTransportApp
         private System.Windows.Forms.TextBox tbxEnd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvConnections;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbtnAbfahrtstafel;
-        private System.Windows.Forms.RadioButton rbtnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.ListBox lbxPredictionStart;
         private System.Windows.Forms.ListBox lbxPredictionEnd;
         private System.Windows.Forms.GroupBox gbxSearch;
@@ -366,11 +374,19 @@ namespace MeinTransportApp
         private System.Windows.Forms.DataGridViewTextBoxColumn Station;
         private System.Windows.Forms.DataGridViewTextBoxColumn Platfrom;
         private System.Windows.Forms.GroupBox gbxAbfahrtstafel;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox lbxPredictionTafel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxStation;
         private System.Windows.Forms.Button btnTafel;
-        private System.Windows.Forms.ComboBox cbxTafel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 
